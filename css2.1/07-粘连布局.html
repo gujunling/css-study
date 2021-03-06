@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>前端小记-粘连布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      .container {
+        min-height: 100%;
+        background: pink;
+      }
+      .container .main {
+        padding-bottom: 50px;
+        /* 当main内容区域的元素过多，导致屏幕出现滚动条时，通过设置此属性来防止main内容区域和footer内容区域重叠，
+        此时虽然依旧有重叠，但重叠区域中main内容区没有元素，对整体没有太大影响 */
+      }
+      .footer {
+        height: 50px;
+        line-height: 50px;
+        background: #bfa;
+        text-align: center;
+        margin-top: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        main主体内容区域<br />
+        main主体内容区域<br />
+      </div>
+    </div>
+    <!-- footer布局要求元素必须要放在容器的外部， 不能放在container内部（main的下面）-->
+    <div class="footer">footer内容区域</div>
+  </body>
+</html>

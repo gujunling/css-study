@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-两列布局</title>
+    <style>
+      /* BFC的区域不会与float box重叠。（可设计实现两列布局） */
+      /* 通过开启BFC实现两列布局 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-width: 600px;
+      }
+      div {
+        height: 200px;
+      }
+      .left {
+        width: 200px;
+        background: #bfa;
+        float: left;
+      }
+      .right {
+        /* 开启BFC即可 */
+        overflow: hidden;
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">左侧区域</div>
+    <div class="right">右侧区域</div>
+  </body>
+</html>

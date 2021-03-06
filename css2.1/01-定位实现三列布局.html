@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        /*最小宽度的取值为： (2 * left )+ right 或者 left + (2 * right) */
+        min-width: 600px;
+      }
+      div {
+        height: 100px;
+      }
+      .left,
+      .right {
+        width: 200px;
+        background: #bfa;
+      }
+      .left {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .right {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .middle {
+        padding: 0 200px; /* 解决中间内容区的内容不能完整显示的方法 */
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        1. 两边固定，中间自适应。
+        2. 中间项的内容要完整显示
+
+        通过定位实现三列布局，缺点是缩小到一定距离后，即使小于最小宽度了，会出现滚动条，但中间的内容依旧会丢失，故不推荐使用
+
+     -->
+
+    <div class="left">left</div>
+    <div class="middle">
+      middle 11111 middle middle middle middle middle middle middle middle
+      middle middle middle middle middle middle middle middle middle middle
+      middle middle middle middle middle middle middle middle middle middle
+      middle middle middle middle middle middle middle middle middle middle
+      middle middle middle middle middle middle
+    </div>
+    <div class="right">right</div>
+    <script></script>
+  </body>
+</html>

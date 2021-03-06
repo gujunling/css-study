@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-禁止系统默认滚动条</title>
+    <style>
+      /* 禁止系统的默认滚动条 */
+      html,
+      body {
+        height: 100%; /* 让body继承HTML的大小，HTML的大小又继承与浏览器视口的大小，即body的大小就是浏览器视口的大小 */
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 1000px"></div>
+  </body>
+</html>

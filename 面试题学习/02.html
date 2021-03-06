@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记</title>
+  </head>
+  <body>
+    <script>
+      console.log(1);
+      setTimeout(() => {
+        console.log(2);
+      });
+      queueMicrotask(() => console.log(3));
+      new Promise((resolve, reject) => {
+        console.log(4);
+        reject();
+        console.log(5);
+      })
+        .then(
+          () => {
+            console.log(6);
+          },
+          () => {
+            console.log(7);
+          }
+        )
+        .finally(() => {
+          console.log(8);
+        });
+    </script>
+  </body>
+</html>
+
+<!-- 
+1
+4
+5
+3
+7
+8
+2
+-->

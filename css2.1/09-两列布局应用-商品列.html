@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-两列布局应用-商品列</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 300px;
+        border: 1px solid;
+        margin: 50px auto; /* 在浮动或者定位的时候如此设置会失效 */
+      }
+      .left {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: url("./img/111.png") no-repeat;
+        background-position: -50px -50px;
+      }
+      .right {
+        padding-left: 30px;
+
+        /* 让溢出的文字显示省略号,这四个缺一不可 */
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+      <div class="right">
+        哈哈哈哈哈哈，清仓大甩卖了啊啊啊啊啊啊啊啊啊啊<br />
+        哈哈哈哈哈哈，清仓大甩卖了啊啊啊啊啊啊啊啊啊啊<br />
+        哈哈哈哈哈哈，清仓大甩卖了啊啊啊啊啊啊啊啊啊啊<br />
+      </div>
+    </div>
+  </body>
+</html>

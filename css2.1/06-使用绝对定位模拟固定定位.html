@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-使用绝对定位模拟固定定位</title>
+    <style>
+        /* 使用绝对定位模拟固定定位，移动端使用较多 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        overflow: hidden; /* 隐藏文档流的滚动条，即系统默认的滚动条 */
+        height: 100%; /* 继承于初始包含块（文档流）的height的大小  */
+      }
+      body {
+        overflow: auto; /* 作用给自己 让body出现滚动条，实现禁止系统默认滚动条，通过元素的绝对定位模拟元素的固定定位 */
+        height: 100%; /* 继承于HTML元素的height的大小  */
+      }
+      .test {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        width: 100px;
+        height: 100px;
+        background: fuchsia;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"></div>
+    <div style="height: 1000px"></div>
+  </body>
+</html>
