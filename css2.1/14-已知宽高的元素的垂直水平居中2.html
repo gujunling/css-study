@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-已知宽高的元素的垂直水平居中方式二</title>
+    <!-- 
+        绝对定位盒子的特性：
+           宽高由内容撑开
+           水平方向上：left + right + width + padding + margin = 包含块padding区域的尺寸。
+           垂直方向上：top + bottom + height + padding + margin = 包含块padding区域的尺寸。
+     -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: relative;
+        width: 400px;
+        height: 600px;
+        background: pink;
+        margin: 0 auto;
+      }
+      .inner {
+        position: absolute;
+        /* left、top、right、bottom四个元素均为0，margin必须为auto，缺一不可 */
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background: deepskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+      </div>
+    </div>
+  </body>
+</html>

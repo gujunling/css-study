@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-文本相关的属性</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 
+      行高：指上下文本行的基线间的垂直距离，
+      行距：指一行底线到下一行顶线的垂直距离
+      行距 = 行高 - 字体大小
+      内容区：底线和顶线包裹的区域
+      行内框：默认等于内容区域
+
+      如果要处理大量的文本，建议把行高设置的要比字体大，
+       */
+
+      /* 
+       行高的使用：单行文本垂直居中
+        */
+
+      /* 
+        color: 前景色（字体颜色）
+        text-align:控制文本的居中形式，只对内联元素或行内元素有效
+        text-indent:控制首行缩进
+        text-decoration:underline用来画下划线
+        letter-spacing:控制字母与字母之间的间距
+        word-spacing:控制单词与单词之间的间距
+        white-space:控制文本是否换行（英文之间没有空格的是不会换行的）
+        
+         */
+      .wrap {
+        height: 200px;
+        line-height: 200px;
+        background: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">哈哈哈哈哈哈哈哈哈</div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-图片垂直水平居中</title>
+    <style>
+      /* 此方式只对inline-block的元素有效,例如 img、input等，浮动，定位的元素都是不可以这样做的 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 在容器中通过after伪元素创建一个可以撑满行的元素（宽度为0，高度为100%），
+      设置display为inline-block，并设置vertical-align为middle，这样，容器下的图片就有了参照，
+      再设置容器下的img标签样式为vertical-align:middle，让两者的对其方式按照after伪元素的对其方式对齐，即可实现图片的垂直水平居中 */
+      .wrap {
+        height: 400px;
+        width: 400px;
+        border: 1px solid;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .wrap::after {
+        content: "";
+        width: 0px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .wrap img {
+        vertical-align: middle;
+      }
+
+      /* 
+      vertical-align： 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。只对行内元素、表格单元格元素生效，不能用它垂直对齐块级元素。
+                      初始值：baseline   不可被继承
+                      使用最多的是img和input元素，参照于行框中行内框最高的元素进行定位
+      参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img src="./img/0000.png" width="200" alt="哈哈" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-未知宽高的元素的垂直水平居中</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: relative;
+        width: 400px;
+        height: 600px;
+        background: pink;
+        margin: 0 auto;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* 此属性中的百分比参照的元素自身的宽高，让其在x轴上向左平移自身的一半宽度，在y轴上向上平移自身的一半高度，z轴上不动 */
+        /* 但此属性的兼容性不太好，可能会存在兼容性问题 */
+        transform: translate3d(-50%, -50%, 0);
+        background: fuchsia;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-字体相关</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /*
+      font-size : 指定字体的大小，该属性的值会被用于计算em长度单位。
+                  默认值：medium (Chrome下为16px，最小为12px，当这个值小于12px时均渲染成12px，当这个值为负数时，则会渲染成默认值16px)，可继承,
+             取值有很多种形式，但暂时只关注的三种值 
+             px:像素
+             em:em的值的大小是动态的，当定义font-size属性时，1em等于元素的父元素的字体大小
+             % ： 参照父元素的字体大小        
+
+        */
+      /* 
+        font-style : 选择font-family字体下的italic或oblique样式
+                     默认值： normal  可继承
+                  
+                  可选值：
+                  normal：选择font-family的常规字体
+                  italic: 选择斜体
+                  oblique：选择倾斜体
+
+         */
+      /* 
+         font-weight :指定了字体的粗细程度，一些字体只提供了normal和bold两种值
+                     默认值:normal  可继承
+
+                     可选值：
+                     normal：正常粗细，与400等值
+                     bold:加粗 与700等值
+                     lighter：比从父元素继承来的值更细
+                     bolder：比从父元素中继承来的值更粗
+                     100,200,300,400,500,600,700,800,900  数值化的规定字体粗细程度的方式，提供了除normal和bold之外更多的值
+          */
+
+      /* 
+          font-family:允许通过给定一个有先后顺序的，由字体名或者字体族名组成的列表来为选定的元素设置字体。属性的值用逗号隔开。
+                      默认值：depends on user agent 可继承
+           */
+
+      /* 
+           font:简写属性,属性值书写顺序有要求，font-style 和font-weight必须在font-size的前面，font-family必须早font-size的后面
+
+            推荐形式：font:font-style font-weight font-size/line-height font-family
+
+            不建议使用此简写属性，可维护性太差，而且顺序不对的话，属性不会生效
+            */
+      .wrap {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">哈哈哈</div>
+  </body>
+</html>

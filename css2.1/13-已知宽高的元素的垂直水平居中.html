@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-已知宽高的元素的垂直水平居中</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: relative;
+        width: 400px;
+        height: 600px;
+        background: pink;
+        margin: 0 auto;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* 必须要手动计算margin-left和margin-top的值，让元素的边界向左上移动当前元素的一半 */
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: deepskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        哈哈哈哈哈哈，inner<br />
+        哈哈哈哈哈哈，inner<br />
+       
+      </div>
+    </div>
+  </body>
+</html>

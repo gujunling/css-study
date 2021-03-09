@@ -10,11 +10,13 @@
            让浮动的子元素可以撑开父元素的高度
 
            1. 直接给父级加高度（扩展性不好）
-           2. 父级元素开启BFC（float、position、 overflow、 display四种属性均可）（页面中所有的元素都加浮动，margin左右自动失效）
-                  浮动盒子的特点和定位盒子的特点：宽高都由内容撑开
-           3. 空标签清除浮动（但不符合工作中 结构、样式、行为三者分离的要求）, <br clear="all" />(br标签中的clear是HTML的一个属性，)
+           2. 父级元素开启BFC（float、position、 overflow、 display四种属性均可）
+                 浮动盒子的特点和定位盒子的特点：宽高都由内容撑开
+                    （页面中所有的元素都加浮动，margin左右自动失效）
+           3. 空标签清除浮动（但不符合工作中 结构、样式、行为三者分离的要求）,
+                             <br clear="all" />(clear是HTML标签的的一个属性)
                              或者 <div style="clear:both"></div>（此时的clear是HTML标签的style属性的css样式）
-           4. after伪类清除浮动
+           4. after伪元素清除浮动，建议使用此种方式
      -->
     <style>
       * {
@@ -31,9 +33,6 @@
         width: 200px;
         height: 200px;
         background: pink;
-      }
-      .clearfix {
-        *zoom: 1;
       }
       .clearfix:after {
         display: block;
