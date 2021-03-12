@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-面试题4</title>
+  </head>
+  <body>
+    <script>
+      //   js中(function(){…})()立即执行函数写法理解
+      //   在function前面加！、+、 -甚至是逗号等到都可以起到函数定义后立即执行的效果，
+      // 而（）、！、+、-、=等运算符，都能将函数声明转换成函数表达式，消除javascript引擎识别函数表达式和函数声明的歧义，
+      // 告诉javascript引擎这是一个函数表达式，不是函数声明，可以在后面加括号，并立即执行函数的代码。加括号是最安全的做法，
+      // 因为！、+、-等运算符还会和函数的返回值进行运算，有时造成不必要的麻烦。
+
+      //   要在函数体后面加括号就能立即调用，则这个函数必须是函数表达式，不能是函数声明。
+
+      //函数声明：function fnName () {…};使用function关键字声明一个函数，再指定一个函数名，叫函数声明。
+
+      // 函数表达式 var fnName = function () {…};使用function关键字声明一个函数，但未给函数命名，最后将匿名函数赋予一个变量，叫函数表达式，
+      //   这是最常见的函数表达式语法形式。
+
+      // 匿名函数：function () {}; 使用function关键字声明一个函数，但未给函数命名，所以叫匿名函数，
+      //   匿名函数属于函数表达式，匿名函数有很多作用，赋予一个变量则创建函数，赋予一个事件则成为事件处理程序或创建闭包等等。
+
+      var name = "hahaha";
+      (function () {
+        if (typeof name === "undefined") {
+          var name = "Jack";
+          console.log("goodbye" + name);
+        } else {
+          console.log("hello" + name);
+        }
+      })();
+
+      //   goodbyeJack
+
+      //   参考链接：https://segmentfault.com/a/1190000003031456
+    </script>
+  </body>
+</html>

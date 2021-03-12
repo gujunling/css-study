@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-文字溢出显示省略号</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        /* 一行文本溢出显示省略号必须要写上下面四个属性，这四个属性缺一不可 */
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      哈哈哈哈哈哈叫阿士大夫还好啦数据库恢复拉萨的回复三打哈副科级高大上快放假规划大赛科技股份会计师大公会加适当福利卡就卡收到货
+    </div>
+  </body>
+</html>

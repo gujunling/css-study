@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-链接伪类选择器</title>
+    <!-- 链接伪类（link visited）只对a标签有用 ，而且缓存中的数据会对结果有影响-->
+    <!--:link：表示作为超链接，并指向一个未访问的地址的所有锚-->
+    <!-- 由于a标签的:link和:visited可以覆盖了所有a标签的状态，所以当:link，:visited，:hover，:active同时出现在a标签
+			身上时,使用的时候需要遵循一个顺序   link visited hover active -->
+    <style type="text/css">
+      /* 
+    	    链接伪类	     注意:link，:visited，:target是作用于链接元素的！
+			:link		表示作为超链接，并指向一个未访问的地址的所有锚
+			:visited	表示作为超链接，并指向一个已访问的地址的所有锚
+			:target 	代表一个特殊的元素，它的id是URI的片段标识符
+     */
+      a {
+        text-decoration: none;
+      }
+      a:link {
+        color: deeppink;
+      }
+      .test:link {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">点我点我点我</a>
+    <div class="test">我是div啦</div>
+  </body>
+</html>

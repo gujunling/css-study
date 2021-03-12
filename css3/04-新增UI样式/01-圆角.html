@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-圆角</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+        height: 300px;
+        border: 1px solid;
+        /* 
+         border-radius 允许设置元素的外边框圆角。
+         该属性是一个 简写属性，
+         是为了将这四个属性 border-top-left-radius、border-top-right-radius、border-bottom-right-radius，和 border-bottom-left-radius 简写为一个属性。
+         
+         border-radius 默认值为0，不可被继承
+                       可选值：
+                              <length> 定义圆形半径或椭圆的半长轴，半短轴。负值无效。
+                              <percentage>使用百分数定义圆形半径或椭圆的半长轴，半短轴。水平半轴相对于盒模型的宽度；垂直半轴相对于盒模型的高度。负值无效。
+        参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius
+         */
+        border-radius:100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

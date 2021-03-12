@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-css3背景</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 1px solid;
+        /* 默认情况下背景图片是从padding-box开始绘制的，从border-box开始裁剪 */
+        background-image: url(./img/0000.png);
+        background-repeat: no-repeat;
+        /* css3新增属性有以下： */
+        background-origin: content-box;
+        background-clip: padding-box;
+        background-size: 100% 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">收到货发了看电视剧</div>
+  </body>
+</html>

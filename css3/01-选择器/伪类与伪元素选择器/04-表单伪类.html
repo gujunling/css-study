@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-表单伪类</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 表单相关伪类
+			:enabled	匹配可编辑的表单
+			:disable	匹配被禁用的表单
+			:checked	匹配被选中的表单
+			:focus		匹配获焦的表单
+      */
+      input:enabled {
+        background: red;
+      }
+      input:disabled {
+        background: yellowgreen;
+      }
+      input:checked {
+        width: 200px;
+        height: 200px;
+      }
+      input:focus {
+        background: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <input type="text" disabled />
+    <input type="checkbox" />
+    <input type="text" />
+  </body>
+</html>

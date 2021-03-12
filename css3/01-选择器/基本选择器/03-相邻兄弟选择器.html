@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-相邻兄弟选择器</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 
+      相邻兄弟选择器，只会匹配紧跟着的兄弟元素，必须是紧跟着的元素，若紧跟着的兄弟元素不是希望匹配到的选择器所对应的元素,即匹配不到，则不会修改样式
+       */
+      .wrap .first +.inner{
+          color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">inner</div>
+      <div class="first">first
+          <span class="inner">哈哈哈哈</span>
+      </div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+    </div>
+  </body>
+</html>

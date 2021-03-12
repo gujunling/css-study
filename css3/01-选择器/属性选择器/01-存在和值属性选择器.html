@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-存在和值属性选择器</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 
+        存在和值属性选择器（css2）	
+          [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。
+          [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。
+          [attr~=val]：表示带有以 attr 命名的属性的元素，并且该属性是一个以空格作为分隔的值列表，其中至少一个值为val。
+        
+        子串值属性选择器
+          [attr|=val] : 选择attr属性的值是val（包括val）或以val-开头的元素,(只有以val 开头且和其他值有分割的时候和以val-开头时，才能匹配上)。(css2)
+          [attr^=val] : 选择attr属性的值以val开头（包括val）的元素。(css3)
+          [attr$=val] : 选择attr属性的值以val结尾（包括val）的元素。(css3)
+          [attr*=val] : 选择attr属性的值中包含字符串val的元素。(css3)
+       */
+
+      /* div[name] {
+        border: 1px solid;
+      } */
+      div[name~="haha"] {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div name="haha-test1">1</div>
+      <div name="haha-test2">2</div>
+      <div name="haha test3">3</div>
+      <div name="ahaha-test4">4</div>
+      <div name="ahaha-test5">5</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-模糊背景</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: relative;
+        height: 200px;
+        background: rgba(105, 105, 45, 0.5);
+      }
+      .wrap .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: url(./img/0000.png) no-repeat;
+        background-size: 100% 100%;
+        /* 模糊则通过filter来实现 */
+        filter: blur(20px);
+      }
+      img {
+        margin: 24px 0 0 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img src="./img/0000.png" width="100px" height="100px" />
+      <div class="bg"></div>
+    </div>
+  </body>
+</html>

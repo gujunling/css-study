@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-风车示例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 4s;
+      }
+      .wrap > div {
+        margin: 10px;
+        width: 180px;
+        height: 180px;
+        background: #bfa;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid;
+      }
+      .wrap > div:nth-child(1),
+      .wrap > div:nth-child(4) {
+        border-radius: 0 60%;
+      }
+      .wrap > div:nth-child(2),
+      .wrap > div:nth-child(3) {
+        border-radius: 60% 0;
+      }
+      .wrap:hover{
+          transform: rotate(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

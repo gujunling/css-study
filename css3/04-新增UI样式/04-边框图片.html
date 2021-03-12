@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-边框图片</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 200px;
+        width: 200px;
+        /* 
+        border-image-source 定义一张图片来代替边框样式，如果为none，则仍然使用border-style定义的样式
+                           默认值：none  不可被继承
+         */
+        border: 30px solid;
+        border-image-source: url(./img/border-image.png);
+        border-image-slice: 33.3333333333333% ;
+        border-image-repeat: repeat;
+        border-image-width: 20px;
+        border-image-outset: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

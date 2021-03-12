@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-实例光斑动画</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        background: black;
+        text-align: center;
+      }
+      .wrap {
+        margin: 100px 0 0 0;
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.3);
+        font: bold 80px "微软雅黑";
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 100px,
+          rgba(255, 255, 255, 1) 180px,
+          rgba(255, 255, 255, 0) 260px
+        );
+        -webkit-background-clip: text;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">哈哈哈哈，俺来也</div>
+  </body>
+  <script type="text/javascript">
+    let wrap = document.querySelector(".wrap");
+    let flag = -160;
+    setInterval(function () {
+      flag += 20;
+      if (flag === 800) {
+        flag = -160;
+      }
+      wrap.style.backgroundPosition = flag + "px";
+    }, 40);
+  </script>
+</html>

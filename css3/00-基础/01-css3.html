@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-css3</title>
+    <style type="text/css">
+    /*
+    1.css全称是什么？
+    2.样式表是什么，是由什么组成的？
+    3.浏览器读取编译css的顺序是从左往右还是从右往左？
+    */
+
+    /* 
+        css全称：Cascading Style Sheets，层叠样式表
+    */
+
+    /* 
+        1. 样式表
+        2. 样式表是由规则来组成的 （每一个style标签内部的所有规则组成的就是一个样式表，即 <style type="text/css"></style>包括其内部的所有规则就是一个样式表）
+        3. 规则是由选择器+声明块来组成的（例如 *{} 整体上是一个规则，.test{}也是一个规则）
+        4. 声明块则是由声明来组成的 （例如：*后面的{}、.test选择器后面的{}）
+        5. 声明则是由css属性+css属性值所组成的键值对组成（例如：margin: 0;）
+    */
+    
+    /* 
+        浏览器读取编译css选择器的顺序是从右往左匹配的，这样效率更高，算法复杂度较低。
+    */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

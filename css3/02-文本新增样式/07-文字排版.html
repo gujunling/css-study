@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端小记-文字排版</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            margin:  200px auto;
+            /* rtl :right to left 从右向左读，注意，必须要配合unicode-bidi使用，此属性才能生效 */
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+       笑哈哈撒哈
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-文字模糊</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        font: 100px/200px "微软雅黑";
+        color: black;
+        text-align: center;
+        margin: 200px auto;
+      }
+      .wrap:hover{
+          color: rgba(0, 0, 0, 0);
+          text-shadow: black 0 0 300px;
+          /* 1s之后在变化，避免显得太突然 */
+          transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">啊哈哈哈哈哈哈哈</div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-通用兄弟选择器</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 
+      使用~连接两个元素时，它会匹配第二个元素，
+      条件是，它必须跟（不一定是紧跟）在第一个元素之后，且他们都有一个共同的父元素
+       */
+      .wrap .first ~ .inner {
+        border: 1px solid;
+        width: 600px;
+      }
+      .wrap {
+        margin: 50px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="first"></div>
+      <span>hahaha<br /></span>
+      <span>hahaha</span>
+      <span>hahaha</span>
+      <div class="inner">
+        <div>innerinerrrrrr</div>
+        <span>hahaha</span>
+        <span>hahaha</span>
+      </div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+      <div class="inner">inner</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-box-sizing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+        background: #bfa;
+        margin-left: -100px;
+        margin-top: -100px;
+        box-sizing: border-box;
+      }
+      /* 
+      输入框的宽度为200px，并且需要让input在输入和显示的时候，光标左右的padding为50px
+       */
+       input{
+           width: 200px;
+           padding: 0 50px;
+           /* 若不加下面的box-sizing属性，则会导致整个input框的宽度变成300px，因为padding会直接加在内容区上，
+           加上box-sizing: border-box;则可以避免出现此类现象，让整个内容区的宽度为200px，即使设置了padding，也只会导致里面的内容显示区域变小，内容区整体大小是不会改变的 
+           
+           box-sizing： 默认值content-box，不可被继承
+                        可选值：
+                               content-box 默认值，标准盒子模型。 width 与 height 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。注意: 内边距、边框和外边距都在这个盒子的外部。
+                               border-box width 和 height 属性包括内容，内边距和边框，但不包括外边距。这是当文档处于 Quirks模式 时Internet Explorer使用的盒模型。
+           */
+           box-sizing: border-box;
+           /*  outline: 0; 去掉聚焦事件时的黑色边框 */
+           outline: 0;
+       }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">哈哈哈哈</div>
+    <input type="text" ></input>
+  </body>
+</html>

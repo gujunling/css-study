@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记=对话框</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 600px;
+        height: 400px;
+        border: 1px solid;
+        border-radius: 300px/200px;
+        text-align: center;
+        line-height: 400px;
+        position: relative;
+      }
+      .wrap::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid;
+        bottom: -20px;
+        right: -20px;
+        border-radius: 50%;
+      }
+      .wrap::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid;
+        bottom: -60px;
+        right: -60px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+  </body>
+</html>

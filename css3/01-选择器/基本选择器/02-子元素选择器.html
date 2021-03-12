@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-子元素选择器</title>
+    <style type="text/css">
+      /* 
+       > :子元素选择器（直接后代选择器）,使用时需要考虑css属性是否是可继承的
+
+     */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap > li {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="wrap">
+      <li>
+        1
+        <div>哈哈哈哈</div>
+      </li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </body>
+</html>
