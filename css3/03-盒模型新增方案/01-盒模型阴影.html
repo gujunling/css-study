@@ -11,21 +11,21 @@
         padding: 0;
       }
       /* 方案一：让wrap元素水平垂直居中 */
-      .wrap{
-          position: absolute;
-          left: 0;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-          width: 200px;
-          height: 200px;
-          text-align: center;
-          line-height: 200px;
-          border: 1px solid;
-          background: pink;
-          /* box-shadow: inset 10px 10px 10px 10px black ; */
-          /* 
+      .wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        border: 1px solid;
+        background: pink;
+        /* box-shadow: inset 10px 10px 10px 10px black ; */
+        /* 
           box-shadow   用于在元素的框架上添加阴影效果。你可以在同一个元素上设置多个阴影效果，并用逗号将他们分隔开。
                        该属性可设置的值包括阴影的X轴偏移量、Y轴偏移量、模糊半径、扩散半径和颜色。
                        默认值：none   不可被继承
@@ -34,8 +34,8 @@
 
            参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow
             */
-          
-          box-shadow:  10px 10px 10px 10px black ;
+
+        box-shadow: 10px 10px 10px 10px black;
       }
       /* 方案二：让wrap元素水平垂直居中 */
       /* html{
@@ -51,6 +51,8 @@
           position: absolute;
           left: 50%;
           top: 50%;
+          margin-left: -50px;
+          margin-top: -50px;
           width: 100px;
           height: 100px;
           border: 1px solid;

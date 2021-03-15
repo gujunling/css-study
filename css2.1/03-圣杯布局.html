@@ -39,7 +39,8 @@
         width: 200px;
         /* margin为负值，只改变元素的边界，不改变元素的位置 */
         /* 设置左边元素的边界为向左移动一个content宽度，但注意，这样只是改变了边界，元素的位置并没有改变，
-        虽然元素上去了，这是因为left的边界改变了，content元素自动向下拓展了，此时的margin-left值必须要和content元素的width值完全相同 */
+        虽然元素上去了，这是因为left的边界改变了，content元素自动向下拓展了，此时的margin-left值必须要和content元素的width值完全相同，
+        即 margin-left: -100%;（margin的百分比参照的是当前元素的包含块的width的值。） */
         margin-left: -100%;
         background: bisque;
         position: relative;
@@ -56,9 +57,6 @@
         top: 0;
       }
       /* 清除content元素的浮动产生的影响 */
-      /* .clearfix {
-        *zoom: 1;
-      } */
       .clearfix:after {
         content: "";
         display: block;

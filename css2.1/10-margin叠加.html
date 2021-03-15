@@ -24,7 +24,8 @@
     <div class="up">upupupupupupupupup</div>
     <!-- 若不想要margin出现重叠，只需要让两个元素不直接相邻即可，即破坏两个box的相邻
     但只是单纯的加一个空的div是不行的，因为div很干净 ，空的span也不行，br元素默认有21px的高度，也不适用，
-    建议在外层在包一层div，并设置样式为overflow:hidden-->
+    建议在外层在包一层div，并设置样式为overflow:hidden 但这种方式也不是所有场合都适用，在需要将超出部分内容显示的时候此方式就不太合适 
+   -->
     <div style="overflow: hidden">
       <div class="down">downdowndowndowndowndowndown</div>
     </div>

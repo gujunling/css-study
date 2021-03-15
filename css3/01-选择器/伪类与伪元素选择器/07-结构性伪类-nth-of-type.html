@@ -28,9 +28,9 @@
 				:first-of-type
 				:last-of-type
 				:nth-last-type(index) 倒序的
-				:only-of-type	(相对于:first-of-type:last-of-type 或者 :nth-of-type(1):nth-last-of-type(1))
+				:only-of-type	(相当于 :first-of-type :last-of-type 同时作用 或者 :nth-of-type(1) :nth-last-of-type(1)同时作用，即既是第一个元素也是最后一个元素)
 				
-			:not		
+			:not	不包含某个元素	
 			:empty(内容必须是空的，什么内容都不能有，有空格都不行，有attr没关系)
 
       div >a:not(:last-of-type){}   div下的最后一个a标签元素不设置此样式

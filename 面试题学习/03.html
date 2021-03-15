@@ -11,19 +11,19 @@
       var a = 1;
       function Fn1() {
         var a = 2;
-        console.log(this); 
-        console.log(this.a); 
+        console.log(this);
+        console.log(this.a);
         console.log(this.a + a);
       }
-        function Fn2() {
-          var a = 10;
-          Fn1();
-        }
-        Fn2();
-        // Fn2中调用Fn1方法中的参数：
-        // console.log(this); //window
-        // console.log(this.a); //1
-        // console.log(this.a + a);//3
+      function Fn2() {
+        var a = 10;
+        Fn1();
+      }
+      Fn2();
+      // Fn2中调用Fn1方法中的参数：
+      // console.log(this); //window
+      // console.log(this.a); //1
+      // console.log(this.a + a);//3
       var Fn3 = function () {
         this.a = 3;
       };

@@ -18,19 +18,19 @@
              em:em的值的大小是动态的，当定义font-size属性时，1em等于元素的父元素的字体大小
              % ： 参照父元素的字体大小        
 
-        */
+      */
       /* 
         font-style : 选择font-family字体下的italic或oblique样式
                      默认值： normal  可继承
                   
                   可选值：
                   normal：选择font-family的常规字体
-                  italic: 选择斜体
-                  oblique：选择倾斜体
+                  italic: 选择斜体，如果当前字体没有可用的斜体版本，会选用倾斜体（oblique ）替代。
+                  oblique：选择倾斜体，如果当前字体没有可用的倾斜体版本，会选用斜体（italic ）替代。
 
-         */
+      */
       /* 
-         font-weight :指定了字体的粗细程度，一些字体只提供了normal和bold两种值
+         font-weight :指定了字体的粗细程度，但注意，一些字体只提供了normal和bold两种值
                      默认值:normal  可继承
 
                      可选值：
@@ -39,20 +39,20 @@
                      lighter：比从父元素继承来的值更细
                      bolder：比从父元素中继承来的值更粗
                      100,200,300,400,500,600,700,800,900  数值化的规定字体粗细程度的方式，提供了除normal和bold之外更多的值
-          */
+     */
 
       /* 
           font-family:允许通过给定一个有先后顺序的，由字体名或者字体族名组成的列表来为选定的元素设置字体。属性的值用逗号隔开。
                       默认值：depends on user agent 可继承
-           */
+      */
 
       /* 
-           font:简写属性,属性值书写顺序有要求，font-style 和font-weight必须在font-size的前面，font-family必须早font-size的后面
+           font:简写属性,属性值书写顺序有要求，font-style 和font-weight必须在font-size的前面，font-family必须在font-size的后面
 
             推荐形式：font:font-style font-weight font-size/line-height font-family
 
             不建议使用此简写属性，可维护性太差，而且顺序不对的话，属性不会生效
-            */
+       */
       .wrap {
         font-size: 30px;
         font-style: normal;

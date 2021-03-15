@@ -33,8 +33,8 @@
            
            box-sizing： 默认值content-box，不可被继承
                         可选值：
-                               content-box 默认值，标准盒子模型。 width 与 height 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。注意: 内边距、边框和外边距都在这个盒子的外部。
-                               border-box width 和 height 属性包括内容，内边距和边框，但不包括外边距。这是当文档处于 Quirks模式 时Internet Explorer使用的盒模型。
+                               content-box ：默认值，标准盒子模型。 width 与 height 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。注意: 内边距、边框和外边距都在这个盒子的外部，此时元素上设置的width和height表示的是content-box的尺寸。
+                               border-box： width 和 height 属性包括内容，内边距和边框，但不包括外边距。这是当文档处于 Quirks模式 时Internet Explorer使用的盒模型，此时元素上设置的width和height表示的是border-box的尺寸。
            */
            box-sizing: border-box;
            /*  outline: 0; 去掉聚焦事件时的黑色边框 */

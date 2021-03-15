@@ -19,12 +19,12 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        background-color: pink;
-        background-image: url(./img/0000.png);
+        background-color: pink;  /* 平铺整个border-box */
+        background-image: url(./img/0000.png); /* 默认从padding-box开始绘制，从border-box开始裁剪 css3中有多背景，默认绘制时尺寸是自己的位图像素 */
         /* background-position 百分比的参照值：参照尺寸为背景图片定位区域的大小减去背景图片的大小 */
-        background-position: -100px -10px;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
+        background-position: -100px -10px; /* 控制背景图片在背景区域中的位置，可以是px值，也可以是百分比，百分比参照的是背景区域减去背景图片的位图像素值 */
+        background-repeat: no-repeat; /* 控制是否平铺 */
+        background-attachment: scroll; /* scroll：默认值，背景图不会随着元素滚动条的滚动而滚动，fixed：背景图铺在视口中，相当于是固定定位了 */
       }
     </style>
   </head>

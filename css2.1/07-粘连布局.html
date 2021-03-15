@@ -23,7 +23,7 @@
       }
       .container .main {
         padding-bottom: 50px;
-        /* 当main内容区域的元素过多，导致屏幕出现滚动条时，通过设置此属性来防止main内容区域和footer内容区域重叠，
+        /* 当main内容区域的元素过多，导致屏幕出现滚动条时，通过设置此属性来防止main内容区域和footer内容区域重叠，注意此时的 padding-bottom的值必须等于下方footer的高度
         此时虽然依旧有重叠，但重叠区域中main内容区没有元素，对整体没有太大影响 */
       }
       .footer {
@@ -42,7 +42,7 @@
         main主体内容区域<br />
       </div>
     </div>
-    <!-- footer布局要求元素必须要放在容器的外部， 不能放在container内部（main的下面）-->
+    <!-- footer布局要求此元素必须要放在容器的外部， 不能放在container内部（main的下面）-->
     <div class="footer">footer内容区域</div>
   </body>
 </html>

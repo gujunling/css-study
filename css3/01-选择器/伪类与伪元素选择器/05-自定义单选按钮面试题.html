@@ -25,6 +25,7 @@
         left: -50px;
         top: -50px;
       }
+      /* 使用子元素选择器（直接后代选择器） */
       label > span {
         position: absolute;
         left: 0;
@@ -32,6 +33,7 @@
         right: 0;
         bottom: 0;
       }
+      /* 使用表单伪类和相邻兄弟选择器 */
       input:checked + span {
         background: red;
       }

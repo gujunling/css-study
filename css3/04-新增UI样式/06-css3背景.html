@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>前端小记-css3背景</title>
     <style>
+      /* 
+      css2 及css3是级别，而不是版本
+       */
       * {
         margin: 0;
         padding: 0;
@@ -24,9 +27,9 @@
         background-image: url(./img/0000.png);
         background-repeat: no-repeat;
         /* css3新增属性有以下： */
-        background-origin: content-box;
+        background-origin: content-box; 
         background-clip: padding-box;
-        background-size: 100% 100%;
+        background-size: 100% 100%; /* 需要注意的是，图片是自适应的，如果需要铺满，则要设置为100% 100%  */
       }
     </style>
   </head>
