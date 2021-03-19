@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-3D变换-旋转rotate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        perspective: 100px;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: pink;
+        text-align: center;
+        font: 30px/200px "微软雅黑";
+        transition: 5s;
+      }
+
+      .wrap:hover .inner {
+        /* transform: rotateX(360deg); */
+        /* transform: rotateY(360deg); */
+        /* transform: rotateZ(360deg); */
+        /* transform: rotate3d(1, 0, 0, 90deg); */
+        transform: rotate3d(1, 2, -1, 192deg);
+        /*  CSS函数定义一个变换，它将元素围绕固定轴移动而不使其变形。运动量由指定的角度定义; 如果为正，运动将为顺时针，如果为负，则为逆时针。 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">时间安监局</div>
+    </div>
+  </body>
+</html>

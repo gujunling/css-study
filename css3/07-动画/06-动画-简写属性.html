@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画-简写属性</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+      }
+      .wrap > .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        text-align: center;
+        font: 20px/100px "微软雅黑";
+        animation: move 3s linear 2s 3 alternate both;
+      }
+      @keyframes move {
+        0% {
+          transform: translateY(-100px);
+        }
+        50% {
+          transform: translateY(50px);
+        }
+        100% {
+          transform: translateY(100px);
+        }
+      }
+      /* 
+       animation 属性是 animation-name，animation-duration, animation-timing-function，animation-delay，animation-iteration-count，animation-direction，animation-fill-mode 和 animation-play-state 属性的一个简写属性形式。
+      
+                 不可被继承
+                 初始值:
+                        animation-name: none
+                        animation-duration: 0s
+                        animation-timing-function: ease
+                        animation-delay: 0s
+                        animation-iteration-count: 1
+                        animation-direction: normal
+                        animation-fill-mode: none
+                        animation-play-state: running
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">小小小小</div>
+    </div>
+  </body>
+</html>

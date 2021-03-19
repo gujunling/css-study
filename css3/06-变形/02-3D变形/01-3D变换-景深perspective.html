@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-3D变换-景深perspective</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        perspective: 400px;
+        perspective-origin: left top;
+      }
+
+      /* 
+      景深 让3D场景有近大远小的效果（肉眼距离屏幕的距离）
+      方式一：perspective: 800px;
+
+              perspective属性 指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。 z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。
+                      默认值为none  不可被继承，但它可以作用于后代元素（不是作用于本身的）
+                      且景深属性需要设置给外层元素，相当于给内层需要变换的元素提供一个舞台
+              参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective
+          
+
+     方式二：transform: perspective(depth);  此时作用于本身，若使用perspective()函数，那么他必须被放置在transform属性的首位，如果放在其他函数之后，则会被忽略
+                depth的默认值是none，可以设置为一个长度值，这个长度是沿着Z轴距离坐标原点的距离。1000px被认为是个正常值
+                这种方式因为限制有点多，不太常用。
+
+
+             景深的原理：
+                         景深越大，灭点越远，元素变形更小
+                         景深越小，灭点越近，元素变形更大
+                         
+            景深叠加会导致出现问题，应该尽可能避免叠加，每个浏览器的叠加的规则是不同的，只能尽可能避免
+
+
+          perspective-origin 指定了观察者的位置，用作 perspective 属性的消失点。
+                             默认值为	50% 50% 百分比参照于盒模型  不可被继承
+
+                     perspective-origin 用于控制 x y轴上的基点
+                     perspective 用于控制 z 轴上的基点
+       */
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: pink;
+        text-align: center;
+        font: 30px/200px "微软雅黑";
+        transition: 5s;
+        /* transform: perspective(100px) rotateX(0deg); */
+      }
+
+      .wrap:hover .inner {
+        /* transform: perspective(100px) rotateX(360deg); */
+        transform: rotateX(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">时间安监局</div>
+    </div>
+  </body>
+</html>

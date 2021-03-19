@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-倾斜skew</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        border: 1px solid;
+        width: 60%;
+        height: 60%;
+        margin: 180px auto;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: #bfa;
+        text-align: center;
+        font: 40px/200px "微软雅黑";
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 2s;
+      }
+      body:hover .wrap {
+        transform: skew(80deg);
+      }
+      /* 
+        skew() 函数定义了一个元素在二维平面上的倾斜转换。它的结果是一个<transform-function> 数据类型 
+
+        这种转换是一种剪切映射(横切)，它在水平和垂直方向上将单元内的每个点扭曲一定的角度。每个点的坐标根据指定的角度以及到原点的距离，进行成比例的值调整；
+        因此，一个点离原点越远，其增加的值就越大。
+
+         skew() 函数指定一个或两个参数，它们表示在每个方向上应用的倾斜量。参数值以deg为单位 
+         skew(ax, ay) ax 表示用于沿横坐标扭曲元素的角度,X方向倾斜，代表与y轴之间的角度。
+                      ay 表示用于沿纵坐标扭曲元素的角度,Y方向倾斜，代表与x轴之间的角度。如果未定义，则其默认值为0，导致纯水平倾斜，在Y轴上没有倾斜。
+
+               skew(45deg,15deg):参数值以deg为单位 第一个参数代表与y轴之间的角度
+                                                  第二个参数代表与x轴之间的角度
+                单值时表示只X轴扭曲，Y轴不变，如transform: skew(30deg);等价于transform: skew(30deg, 0);
+                考虑到可读性，不推荐用单值，应该用transform: skewX(30deg);。skewY表示 只Y轴扭曲，X轴不变  
+                  正值:拉正斜杠方向的两个角
+                  负值:拉反斜杠方向的两个角
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">小胖胖</div>
+  </body>
+</html>

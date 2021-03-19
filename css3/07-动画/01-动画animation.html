@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画animation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+      }
+      .wrap > .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        text-align: center;
+        font: 20px/100px "微软雅黑";
+        border-radius: 50%;
+        /* 动画内的属性  */
+        animation-name: move;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        /* 动画内的属性  */
+        animation-delay: 2s;
+        /* 只作用于动画内的属性，即指定了animation-delay只会在动画开始之前执行一次，不会因为animation-iteration-count设置的循环次数导致延迟被多次触发  */
+        animation-iteration-count: 5;
+      }
+      @keyframes move {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      /* 
+        animation-name属性指定应用的一系列动画，每个名称代表一个由@keyframes定义的动画序列。
+                      初始值：none  不可被继承
+
+                      参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-name
+      */
+      /* 
+      animation-duration属性指定一个动画周期的时长。
+                            注意，必须带单位，单位为秒(s)或毫秒(ms),负值无效，浏览器会忽略该声明，但是一些早起的带前缀的声明会将负值当作0s
+
+                        默认值为0s，表示无动画。不可被继承。
+
+                        参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-duration
+      */
+      /* 
+       animation-timing-function属性定义CSS动画在每一动画周期中执行的节奏。可能值为一或多个 <timing-function>。
+                                 初始值	ease 不可被继承
+
+       对于关键帧动画来说，timing function作用于一个关键帧周期而非整个动画周期，即从关键帧开始开始，到关键帧结束结束。
+
+      定义于一个关键帧区块的缓动函数(animation timing function)应用到该关键帧；另外，若该关键帧没有定义缓动函数，则使用定义于整个动画的缓动函数。
+
+      参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function
+     */
+      /* 
+      animation-delay 属性定义动画于何时开始，即从动画应用在元素上到动画开始的这段时间的长度。
+                      初始值	0s    不可被继承
+      0s是该属性的默认值，代表动画在应用到元素上后立即开始执行。否则，该属性的值代表动画样式应用到元素上后到开始执行前的时间长度；
+      定义一个负值会让动画立即开始。但是动画会从它的动画序列中某位置开始。例如，如果设定值为-1s，动画会从它的动画序列的第1秒位置处立即开始。
+      如果为动画延迟指定了一个负值，但起始值是隐藏的，则从动画应用于元素的那一刻起就获取起始值。
+
+      参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-delay
+    */
+      /* 
+    animation-iteration-count 属性定义动画在结束前运行的次数 可以是1次 无限循环。重复的是关键帧
+
+      animation-iteration-count 属性可以指定一个或多个以逗号分隔的值。如果指定了多个值，每次播放动画时，将使用列表中的下一个值，在使用最后一个值后循环回第一个值。
+
+      infinite :  无限循环播放动画。
+      <number> ： 动画播放的次数；默认值为1。可以用小数定义循环，来播放动画周期的一部分：例如，0.5 将播放到动画周期的一半。不可为负值。
+
+      参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-iteration-count
+     */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">就是矫情</div>
+    </div>
+  </body>
+</html>

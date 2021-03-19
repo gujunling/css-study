@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-矩阵</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        border: 1px solid;
+        width: 60%;
+        height: 60%;
+        margin: 180px auto;
+      }
+      .wrap1 {
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        border: 1px solid;
+        text-align: center;
+        line-height: 100px;
+        margin: 100px 0;
+        transition: 2s;
+      }
+      .wrap2 {
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        border: 1px solid;
+        text-align: center;
+        line-height: 100px;
+        transition: 2s;
+      }
+      body:hover .wrap1 {
+        transform: scale(2) translate(100px);
+      }
+      body:hover .wrap2 {
+        transform: translate(100px) scale(2);
+      }
+      /* 
+        变换在组合的时候计算方向是从右往左进行计算的，所以在组合的时候需要注意，变换的底层就是矩阵的计算
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap1">小胖胖</div>
+    <div class="wrap2">小瘦瘦</div>
+  </body>
+</html>

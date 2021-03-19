@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画-实例-开机动画-3D版本</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+      .wrap {
+        height: 100%;
+        position: relative;
+        background: #bfa;
+        perspective: 800px;
+      }
+      .wrap > .inner {
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+      .wrap > .inner > img {
+        width: 30%;
+        margin-top: -50px;
+        animation: whirl 2s linear infinite alternate;
+      }
+      @keyframes whirl {
+        from {
+          transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+        }
+        to {
+          transform: translate3d(-50%, -50%, 0) rotateY(360deg);
+        }
+      }
+      .wrap > .inner > img,
+      .wrap > .inner > p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        <img src="./img/logo.png" />
+        <p>已加载0%</p>
+      </div>
+    </div>
+  </body>
+  <!-- 模拟获取图片资源 -->
+  <script src="./js/data.js"></script>
+  <script>
+    window.onload = function () {
+      let pNode = document.querySelector(".wrap >.inner >p");
+      let flag = 0;
+      let arr = [];
+      for (item in imgData) {
+        arr = arr.concat(imgData[item]);
+      }
+      for (let i = 0; i < arr.length; i++) {
+        let img = new Image();
+        // 模拟ajax请求
+        img.src = arr[i];
+        // 图片加载成功
+        img.onload = function () {
+          flag++;
+          pNode.innerHTML =
+            "已加载" + Math.round((flag / arr.length) * 100) + "%";
+        };
+        // 图片加载失败
+        img.onerror = function () {
+          console.log("请重新选择图片");
+        };
+      }
+    };
+  </script>
+</html>

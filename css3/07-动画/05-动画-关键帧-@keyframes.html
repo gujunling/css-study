@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画-关键帧@keyframes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+      }
+      .wrap > .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        text-align: center;
+        font: 20px/100px "微软雅黑";
+        /* 动画内的属性  */
+        animation-name: move;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        /* 动画内的属性  */
+        animation-delay: 2s;
+        /* 只作用于动画内的属性，即指定了animation-delay只会在动画开始之前执行一次，不会因为animation-iteration-count设置的循环次数导致延迟被多次触发  */
+        animation-iteration-count: 3;
+        /* 元素在动画外的状态 */
+        animation-fill-mode: both;
+      }
+      @keyframes move {
+        0% {
+          transform: translateY(-100px);
+        }
+        50% {
+          transform: translateY(50px);
+        }
+        100% {
+          transform: translateY(100px);
+        }
+      }
+
+      /*  
+      关键帧 @keyframes at-rule 规则通过在动画序列中定义关键帧（或waypoints）的样式来控制CSS动画序列中的中间步骤。
+      和 转换 transition 相比，关键帧 keyframes 可以控制动画序列的中间步骤。
+
+      要使用关键帧, 先创建一个带名称的 @keyframes 规则，以便后续使用 animation-name 属性将动画同其关键帧声明匹配。
+      每个 @keyframes 规则包含多个关键帧，也就是一段样式块语句，每个关键帧有一个百分比值作为名称，代表在动画进行中，在哪个阶段触发这个帧所包含的样式。
+      可以按任意顺序列出关键帧百分比；它们将按照其应该发生的顺序来处理。
+
+      其他情况参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">小小小小</div>
+    </div>
+  </body>
+</html>

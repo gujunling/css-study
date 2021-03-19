@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-时钟实例</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%);
+      }
+      ul > li {
+        position: absolute;
+        left: 99px;
+        top: 0;
+        width: 2px;
+        height: 10px;
+        background: black;
+        transform-origin: center 100px;
+      }
+      ul > li:nth-child(5n + 1) {
+        height: 20px;
+      }
+      .wrap > .hour {
+        position: absolute;
+        left: 97px;
+        top: 70px;
+        width: 6px;
+        height: 30px;
+        background: black;
+        transform-origin: center bottom;
+      }
+      .wrap > .min {
+        position: absolute;
+        left: 98px;
+        top: 50px;
+        width: 4px;
+        height: 50px;
+        background: gray;
+        transform-origin: center bottom;
+      }
+      .wrap > .second {
+        position: absolute;
+        left: 99px;
+        top: 30px;
+        width: 2px;
+        height: 70px;
+        background: red;
+        transform-origin: center bottom;
+      }
+      .wrap > .icon {
+        position: absolute;
+        left: 90px;
+        top: 90px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul></ul>
+      <div class="hour"></div>
+      <div class="min"></div>
+      <div class="second"></div>
+      <div class="icon"></div>
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      let hourNode = document.querySelector(".wrap >.hour");
+      let minNode = document.querySelector(".wrap >.min");
+      let secondNode = document.querySelector(".wrap >.second");
+
+      let ulNode = document.querySelector(".wrap > ul");
+      //   重新创建一个style标签，用于为多个li添加样式
+      let cssStyleNode = document.createElement("style");
+      let liHtml = "";
+      let cssText = "";
+      for (let i = 0; i < 60; i++) {
+        liHtml += "<li></li>";
+        cssText +=
+          " ul > li:nth-child(" +
+          (i + 1) +
+          ") {transform: rotate(" +
+          i * 6 +
+          "deg);}";
+        //   注意不能使用单引号，使用单引号会出错
+      }
+      ulNode.innerHTML = liHtml;
+      cssStyleNode.innerHTML = cssText;
+      document.head.appendChild(cssStyleNode);
+
+      move(); // 防止每次刷新页面时页面需要停顿一下，在定时器setInterval之前先调用一次move函数
+      setInterval(move, 1000);
+      function move() {
+        let date = new Date();
+        let s = date.getSeconds();
+        let m = date.getMinutes() + s / 60; //为了保证拿到的值是精确地,指针的转动角度需要更加精确
+        let h = date.getHours() + m / 60;
+        hourNode.style.transform = "rotate(" + 30 * h + "deg)";
+        minNode.style.transform = "rotate(" + 6 * m + "deg)";
+        secondNode.style.transform = "rotate(" + 6 * s + "deg)";
+      }
+    };
+  </script>
+</html>

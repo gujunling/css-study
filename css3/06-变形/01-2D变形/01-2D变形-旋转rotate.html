@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-旋转rotate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: #bfa;
+        text-align: center;
+        font: 40px/200px "微软雅黑";
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 2s;
+      }
+      body:hover .wrap {
+        transform: rotate(180deg);
+      }
+      /* 
+         transform属性允许你旋转，缩放，倾斜或平移给定元素。这是通过修改CSS视觉格式化模型的坐标空间来实现的，transform属性只对 block 块级元素有效。
+         rotate 属性值允许你单独设置transform的旋转属性。
+                默认值为 none 不可被继承
+                只能设单值。正数表示顺时针旋转，负数表示逆时针旋转
+    */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">小胖胖</div>
+  </body>
+</html>

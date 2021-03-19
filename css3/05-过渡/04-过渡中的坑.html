@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-过渡中的坑</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        width: 60%;
+        height: 60%;
+        border: 1px solid;
+        margin: 180px auto;
+      }
+
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition-property: width;
+        transition-duration: 3s;
+        transition-timing-function: linear;
+        transition-delay: 1s;
+      }
+      body:hover .wrap {
+        transition-property: height;
+        width: 100px;
+        height: 100px;
+      }
+      /*  过渡只关心元素的初始状态和结束状态，没有方法可以获取元素在过渡中每一帧的状态 */
+      /* 
+      此时在body被hover的时候，wrap元素中的 transition-property立即由width改变为了height，这个过程极短，浏览器来不及去渲染页面，
+      等到真正要去渲染页面的时候，此时的transition-property已经是height了，所以此时看到的过渡效果是height的，
+      在鼠标从body的hover状态离开的时候，wrap元素中的 transition-property立即由height变成了width，这个过程同样很短，浏览器依旧来不及渲染页面
+      等到要去渲染的时候，此时的 transition-property已经是width了，所以看到的过渡效果是width的
+        css和js的解析速度很快，在这么短的时间内浏览器来不及渲染页面
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

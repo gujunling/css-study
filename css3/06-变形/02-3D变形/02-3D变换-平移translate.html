@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-3D变换-平移translate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        perspective: 200px;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: pink;
+        text-align: center;
+        font: 30px/200px "微软雅黑";
+        transition: 5s;
+      }
+
+      .wrap:hover .inner {
+        /* transform: translateX(100px); */
+        /* transform: translateY(100px); */
+        /* transform: translateZ(100px); */
+        transform: translate3d(50%, 50%, 0);
+        /* translateZ 不能写百分比，其没有参照，translateX translateY 可以写百分比，参照的是盒模型的宽高*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">时间安监局</div>
+    </div>
+  </body>
+</html>

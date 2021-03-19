@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-扇形导航实例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+      .wrap {
+        width: 50px;
+        height: 50px;
+        /* border: 1px solid; */
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+      .wrap > .inner {
+        height: 100%;
+      }
+      .wrap > .inner > img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 4px;
+        border-radius: 50%;
+      }
+      .wrap > .home {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background: url("./img/home.png") no-repeat;
+        border-radius: 50%;
+        transition: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        <img src="./img/clos.png" />
+        <img src="./img/full.png" />
+        <img src="./img/open.png" />
+        <img src="./img/prev.png" />
+        <img src="./img/refresh.png" />
+      </div>
+      <div class="home"></div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // 1. 在元素首次渲染还没有完成的情况下，是不会触发过渡的
+    // 2. 在绝大多数变换样式切换中，如果变换组合的位置或个数不一样时，也是不会触发过渡的
+    window.onload = function () {
+      let homeEle = document.querySelector(".home");
+      var imgs = document.querySelectorAll(".wrap > .inner > img");
+      let flag = true;
+      let c = 140;
+      homeEle.onclick = function () {
+        if (flag) {
+          this.style.transform = "rotate(-720deg)";
+          for (let i = 0; i < imgs.length; i++) {
+            imgs[i].style.transition = " 1s " + i * 0.1 + "s";
+            imgs[i].style.transform = "scale(1) rotate(-720deg)";
+            imgs[i].style.left =
+              -getPoint(c, (90 * i) / (imgs.length - 1)).left + "px";
+            imgs[i].style.top =
+              -getPoint(c, (90 * i) / (imgs.length - 1)).top + "px";
+          }
+        } else {
+          this.style.transform = "rotate(0deg)";
+          for (let i = 0; i < imgs.length; i++) {
+            imgs[i].style.transition =
+              " 1s " + (imgs.length - i - 1) * 0.1 + "s";
+            imgs[i].style.transform = "scale(1) rotate(0deg)";
+            imgs[i].style.left = 0 + "px";
+            imgs[i].style.top = 0 + "px";
+          }
+        }
+        flag = !flag;
+      };
+
+      //已知一个直角三角形中的斜边和其中一个角，求另外两边的长度
+      function getPoint(c, deg) {
+        let xx = Math.round(c * Math.sin((deg * Math.PI) / 180));
+        let yy = Math.round(c * Math.cos((deg * Math.PI) / 180));
+        return { left: xx, top: yy };
+      }
+
+      // 点击图片放大
+      for (let i = 0; i < imgs.length; i++) {
+        imgs[i].onclick = function () {
+          this.style.transition = "1s";
+          this.style.transform = "scale(2) rotate(-720deg)";
+          this.style.opacity = 0.4;
+
+          this.addEventListener("transitionend", fn);
+        };
+      }
+      function fn() {
+        this.style.transition = "0.2s";
+        this.style.transform = "scale(1) rotate(-720deg)";
+        this.style.opacity = 1;
+
+        this.removeEventListener("transitionend", fn);
+      }
+    };
+  </script>
+</html>

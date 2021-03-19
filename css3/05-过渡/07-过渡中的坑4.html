@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-过渡中的坑</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        width: 60%;
+        height: 60%;
+        border: 1px solid;
+        margin: 180px auto;
+      }
+
+      #wrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition-property: width;
+        transition-duration: 3s;
+        transition-timing-function: linear;
+        transition-delay: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="wrap"></div> -->
+  </body>
+  <script type="text/javascript">
+    // transition 在元素首次渲染还没有结束的情况下是不会被触发的，即页面整体的首次渲染时并不会执行transition，
+    window.onload = function () {
+      let wrapNode = document.createElement("div");
+      wrapNode.id = "wrap";
+      document.body.appendChild(wrapNode);
+      setTimeout(() => {
+        wrapNode.style.width = "100px";
+        wrapNode.style.height = "100px";
+      }, 2000);
+    };
+  </script>
+</html>

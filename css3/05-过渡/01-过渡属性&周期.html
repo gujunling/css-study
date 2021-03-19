@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-过渡属性&周期</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        width: 60%;
+        height: 60%;
+        border: 1px solid;
+        margin: 180px auto;
+      }
+
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        font: 50px/200px "微软雅黑";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        /* 
+          过渡只关心元素的初始状态和结束状态，没有方法可以获取元素在过渡中每一帧的状态
+          
+          transition 属性可以被指定为一个或多个 CSS 属性的过渡效果，多个属性之间用逗号进行分隔。
+          transition 提供了一种在更改css属性时控制动画速度的方法，其可以让属性变化为一个持续一段时间的过程，而不是立即生效。
+          transition  属性是 transition-property，transition-duration，transition-timing-function 和 transition-delay 的一个简写属性。
+            默认值：transition-delay: 0s  transition-duration: 0s  transition-property: all  transition-timing-function: ease ，不可被继承
+        */
+        /* 
+        transition-property  指定应用过渡属性的名称。
+                             默认值 all 不可被继承
+                             可选值：（可以指定多个property）
+                                    none：没有过渡动画
+                                    all：所有可被动画的属性都表现出过渡动画。
+                                         可被动画的属性参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties
+                                    IDENT: 属性名称（可指定多个）。
+                            参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-property
+
+        */
+        /* 
+          transition-duration 属性以秒或毫秒为单位指定过渡动画所需的时间。默认值为 0s ，表示不出现过渡动画。
+            可以指定多个时长(时长之间用逗号隔开)，每个时长会被应用到由 transition-property 指定的对应属性上。
+            如果指定的时长个数小于属性个数，那么时长列表会重复。如果时长列表更长，那么该列表会被裁减。两种情况下，属性列表都保持不变。
+
+           transition-duration 属性的默认值为0s ，不可被继承
+                               属性值：
+                               time:以秒或毫秒为单位的数值
+                                <time> 类型。表示过渡属性从旧的值转变到新的值所需要的时间。如果时长是 0s ，表示不会呈现过渡动画，属性会瞬间完成转变。不接受负值。
+                                      一定要加单位（不能为0,一定要写0s 1s 100ms等）
+                参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-duration
+        */
+        transition-property: width, height;
+        transition-duration: 5s, 2s;
+      }
+
+      body:hover .wrap {
+        width: 100px;
+        height: 100px;
+        font: 20px/100px "微软雅黑";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">还会飞</div>
+  </body>
+</html>

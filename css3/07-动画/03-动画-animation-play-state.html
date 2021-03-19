@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画-animation-play-state</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+      }
+      .wrap > .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        text-align: center;
+        font: 20px/100px "微软雅黑";
+        /* 动画内的属性  */
+        animation-name: move;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        /* 动画内的属性  */
+        animation-delay: 2s;
+        /* 只作用于动画内的属性，即指定了animation-delay只会在动画开始之前执行一次，不会因为animation-iteration-count设置的循环次数导致延迟被多次触发  */
+        animation-iteration-count: 2;
+        /* 元素在动画外的状态 */
+        animation-fill-mode: both;
+      }
+      @keyframes move {
+        from {
+          transform: translateY(-100px);
+        }
+        to {
+          transform: translateY(100px);
+        }
+      }
+      .wrap:hover .inner {
+        animation-play-state: paused;
+      }
+      /* 
+        animation-play-state 属性定义一个动画是否运行或者暂停。可以通过查询它来确定动画是否正在运行。另外，它的值可以被设置为暂停和恢复的动画的重放。
+
+                             恢复一个已暂停的动画，将从它开始暂停的时候，而不是从动画序列的起点开始在动画。
+
+                             默认值：running   不可被继承
+
+                             可选值：
+                                    running
+                                        当前动画正在运行。
+                                    paused
+                                        当前动画已被停止。
+          参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-play-state
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">就是矫情</div>
+    </div>
+  </body>
+</html>

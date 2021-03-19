@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-过渡完成事件</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        width: 60%;
+        height: 60%;
+        border: 1px solid;
+        margin: 180px auto;
+      }
+
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        font: 50px/200px "微软雅黑";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition-property: width,height;
+        transition-duration: 3s;
+        transition-timing-function: linear;
+        transition-delay: 1s;
+      }
+      /* body:hover .wrap {
+        width: 100px;
+        height: 100px;
+        font: 20px/100px "微软雅黑";
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+  <script type="text/javascript">
+    window.onload = function () {
+      let bodyNode = document.querySelector("body");
+      let wrapNode = document.querySelector(".wrap");
+      // dom0事件
+      bodyNode.onmouseover = function () {
+        wrapNode.style.width = "100px";
+        wrapNode.style.height = "100px";
+      };
+    // dom2事件
+    //   当过渡完成时触发一个事件，在符合标准的浏览器下，这个事件是 transitionend, 在 WebKit 下是 webkitTransitionEnd
+    //   每一个拥有过渡的属性在其完成过渡时都会触发一次transitionend事件
+    // 在transition完成前设置 display: none，事件同样不会被触发
+      wrapNode.addEventListener('transitionend',function(){
+          alert('over')
+      });
+    };
+  </script>
+</html>

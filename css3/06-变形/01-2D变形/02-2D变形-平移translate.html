@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-平移translate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        border: 1px solid;
+        width: 60%;
+        height: 60%;
+        margin: 180px auto;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: #bfa;
+        text-align: center;
+        font: 40px/200px "微软雅黑";
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 2s;
+      }
+      body:hover .wrap {
+        /* transform: translateX(200px); */
+        /* transform: translateY(-200px); */
+        transform: translate(200px,-200px);
+      }
+      /* 
+        translate 属性 允许你单独声明平移变换，并独立于 transform 属性。
+                  默认值 none  不可被继承
+
+        X方向平移:transform:  translateX(tx)
+        Y方向平移:transform:  translateY(ty) 
+        二维平移：transform:  translate(tx[, ty])； 如果ty没有指定，它的值默认为0。
+        可设单值，也可设双值。
+              正数表示XY轴正向位移，负数为反向位移。设单值表示只X轴位移，Y轴坐标不变，
+              例如transform: translate(100px);等价于transform: translate(100px,0);
+         
+    */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">小胖胖</div>
+  </body>
+</html>

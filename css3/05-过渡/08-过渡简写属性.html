@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-过渡中的坑</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        width: 60%;
+        height: 60%;
+        border: 1px solid;
+        margin: 180px auto;
+      }
+
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 3s 5s width, 1s height;
+      }
+      body:hover .wrap {
+        width: 100px;
+        height: 100px;
+      }
+
+      /* css 过渡由简写属性transition  定义是最好的方式，可以避免属性值列表长度不一 ，节省调试时间
+      在transition属性中，各个值的书写顺序是很重要的：第一个可以解析为时间的值会被赋值给transition-duration（过渡时间），第二个可以解析为时间的值会被赋值给transition-delay(延迟时间)
+        
+        推荐书写顺序
+           过渡时间（transition-duration）  过渡属性名称（transition-property ）  过渡形式（transition-timing-function）  延迟时间 , 过渡时间  过渡属性名称  过渡形式  延迟时间 , 。。。。。。
+
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

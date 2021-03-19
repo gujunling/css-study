@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-2D变形-基点的变换</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        border: 1px solid;
+        width: 60%;
+        height: 60%;
+        margin: 180px auto;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        background: #bfa;
+        text-align: center;
+        font: 40px/200px "微软雅黑";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 2s;
+        transform-origin:top left;
+      }
+      body:hover .wrap {
+        transform: rotate(90deg);
+      }
+      /* 
+        transform-origin 属性让你更改一个元素变形的原点。原点的改变对平移不会产生影响，平移是参照与原来的位置进行的平移
+        默认值 50% 50% 0   不可被继承
+
+        transform-origin属性可以使用一个，两个或三个值来指定，其中每个值都表示一个偏移量。 没有明确定义的偏移将重置为其对应的初始值。
+
+        如果定义了两个或更多值并且没有值的关键字，或者唯一使用的关键字是center，则第一个值表示水平偏移量，第二个值表示垂直偏移量。
+
+        一个值：
+            必须是<length>，<percentage>，或 left, center, right, top, bottom关键字中的一个。
+        两个值：
+            其中一个必须是<length>，<percentage>，或left, center, right关键字中的一个。
+            另一个必须是<length>，<percentage>，或top, center, bottom关键字中的一个。
+        三个值：
+            前两个值和只有两个值时的用法相同。
+            第三个值必须是<length>。它始终代表Z轴偏移量。
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">小胖胖</div>
+  </body>
+</html>

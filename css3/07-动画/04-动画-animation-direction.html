@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-动画-animation-direction</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+      }
+      .wrap > .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+        background: #bfa;
+        text-align: center;
+        font: 20px/100px "微软雅黑";
+        /* 动画内的属性  */
+        animation-name: move;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+        /* 动画内的属性  */
+        animation-delay: 2s;
+        /* 只作用于动画内的属性，即指定了animation-delay只会在动画开始之前执行一次，不会因为animation-iteration-count设置的循环次数导致延迟被多次触发  */
+        animation-iteration-count: 3;
+        /* 元素在动画外的状态 */
+        animation-fill-mode: both;
+      }
+      @keyframes move {
+        from {
+          transform: translateY(-100px);
+        }
+        to {
+          transform: translateY(100px);
+        }
+      }
+      .wrap:hover .inner {
+        animation-play-state: paused;
+      }
+      /*  
+     animation-direction 属性指示动画播放的方向。反转的是关键帧和animation-timing-function
+                         初始值：normal  不可被继承
+              可选值：
+                    normal
+                    每个循环内动画向前循环，换言之，每个动画循环结束，动画重置到起点重新开始，这是默认属性。
+                    alternate
+                    动画交替反向运行，反向运行时，动画按步后退，同时，带时间功能的函数也反向，比如，ease-in 在反向时成为ease-out。计数取决于开始时是奇数迭代还是偶数迭代
+                    reverse
+                    反向运行动画，每周期结束动画由尾到头运行。
+                    alternate-reverse
+                    反向交替， 反向开始交替
+                    动画第一次运行时是反向的，然后下一次是正向，后面依次循环。决定奇数次或偶数次的计数从1开始。
+     */
+      /* 
+        希望元素在做动画时是从from ==》 to ==》from ==》to ==》from，不再一直都是from==》 to 之后直接回到from的位置在做动画运动到to
+
+        只需要设置 animation-direction的值为alternate即可。
+        若想从一开始就想从to开始到from则需要设置animation-direction的值为alternate-reverse即可。
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">就是矫情</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-3D变换-transform-style</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        perspective: 200px;
+        background: #bfa;
+        transform-style: preserve-3d;
+      }
+      .inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        font: 30px/200px "微软雅黑";
+        /* transition: 5s; */
+        transform: rotateX(45deg);
+      }
+      /* 
+      transform-style 属性 设置元素的子元素是位于 3D 空间中还是平面中。如果选择平面，元素的子元素将不会有 3D 的遮挡关系。
+                          初始值	flat   不可被继承（但作用于子元素）
+
+                        可选值：
+                              flat   设置元素的子元素位于该元素的平面中。
+                              preserve-3d   指示元素的子元素应位于 3D 空间中。
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">时间安监局</div>
+    </div>
+  </body>
+</html>
