@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-容器-flex-wrap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+        flex-wrap: wrap;
+       
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;      
+      }
+     
+      /*
+        flex-wrap 指定 flex 元素单行显示还是多行显示 。如果允许换行，这个属性允许你控制行的堆叠方向。
+
+                   默认值nowrap  不可被继承
+
+                  可选值：
+                        nowrap
+                             flex 的元素被摆放到到一行，这可能导致溢出 flex 容器。 cross-start  会根据 flex-direction 的值 相当于 start 或 before。
+                        wrap
+                             flex 元素 被打断到多个行中。cross-start 会根据 flex-direction 的值选择等于start 或before。cross-end 为确定的 cross-start 的另一端。
+                        wrap-reverse
+                            和 wrap 的行为一样，但是 cross-start 和 cross-end 互换。
+      */
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

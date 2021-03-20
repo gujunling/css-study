@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端小记-flex简写属性</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+      }
+      .wrap > .item {
+        /* width: 50px; */
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+        flex: 1;
+      }
+        /* 
+        flex 简写属性设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间。此属性是以下CSS属性的简写：flex-grow   flex-shrink   flex-basis
+       
+            初始值:flex-grow: 0   flex-shrink: 1   flex-basis: auto  不可被继承
+
+            flex:1(flex-grow: 1   flex-shrink: 1   flex-basis: 0% )
+         */
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">1</div>
+        <div class="item">22</div>
+        <div class="item">333</div>
+        <div class="item">4444</div>
+        <div class="item">5555555555</div>
+        <div class="item">666666</div>
+    </div>
+</body>
+</html>

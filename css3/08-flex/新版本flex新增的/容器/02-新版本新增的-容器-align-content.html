@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-容器-align-content</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-end;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      /*
+        align-content 属性设置了浏览器如何沿着弹性盒子布局的纵轴和网格布局的主轴在内容项之间和周围分配空间。会把所有行、列看成一个整体
+                      该属性对单行弹性盒子模型无效。（即：带有 flex-wrap: nowrap）。
+
+                      当同时定义了align-content和align-items的时候，如果是单行元素，则align-items生效，如果是多行多列元素，则align-content生效
+
+                      默认值： normal  不可被继承
+
+                      可选值（部分）：
+                          start
+                              所有行从容器的起始边缘开始填充。
+                          end
+                              所有行从容器的结束边缘开始填充。
+                          flex-start
+                              所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。
+                          flex-end
+                              所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。
+                          center
+                              所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。
+                          normal
+                              这些项按默认位置填充，就像没有设置对齐内容值一样。
+
+            参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

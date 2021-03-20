@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-项目-flex-shrink</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 100px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+        flex-shrink: 1;
+      }
+      .wrap > .item:nth-child(1) {
+        width: 200px;
+      }
+      /* 
+      flex-basis 指定了 flex 元素在主轴方向上的初始大小
+        默认值 ：auto  不可继承
+
+        注意：
+            在flex简写属性中 flex-basis的默认值为0
+       */
+      /*
+         
+        flex-shrink 属性指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。
+
+                    初始值 1   不可被继承
+
+                    flex-shrink 属性只能是一个 <number>。负值是不被允许的。
+
+            flex-shrink属性生效的前提条件是：不换行且flex元素的宽度之和必须大于容器的宽度，
+            在容器中设置flex-wrap:wrap会导致属性失效，当容器大小大于所有flex元素的宽度之后时该属性也会失效。
+
+            无论如何收缩也不会导致flex元素中被占据空间的元素丢失，即flex被自动撑开的宽度不能被收缩，如果不能继续收缩的时候元素会溢出，
+               若其他的flex元素没有撑满整个元素，则会先减去整个溢出元素溢出的宽度，剩下的空间在按照下面的公式进行计算
+
+            flex-shrink：
+
+            1.计算收缩因子与基准值乘的总和    200 + 50*4 =400
+            2.计算收缩因数
+                        收缩因数=（项目的收缩因子*项目基准值）/第一步计算总和      1 *200 /400 = 1/2       1*50/400 = 1/8
+            3.移除空间的计算
+                        移除空间= 项目收缩因数 x 负溢出的空间                     1/2*(400-100) = 150          1/8 *(400-100) = 37.5
+            4.flex 元素的宽度为：                                                200- 150 =50                 50 - 37.5 = 12.5
+
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </body>
+</html>

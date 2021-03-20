@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-容器-flex-flow</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+        flex-flow: wrap;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      /*
+        flex-flow 属性是 flex-direction 和 flex-wrap 的简写。可以控制主轴和侧轴是哪一根、主轴和侧轴的方向
+              初始值:    flex-direction: row   flex-wrap: nowrap   不可被继承
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

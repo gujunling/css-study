@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本flex-容器的排列方向</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+      }
+      /* 
+       flex-direction 属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。
+       可选值：
+            row
+              设置主轴为水平方向，且为水平向右
+            column
+                设置主轴为垂直方向，且为垂直向下
+            row-reverse
+              表现和row相同，但主轴方向为水平向左
+            column-reverse
+              表现和column相同，但主轴方向为垂直向上
+         */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

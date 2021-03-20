@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-flex等分布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+      }
+      .wrap > .item {
+        /* width: 50px; */
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-shrink: 1;
+      }
+      /* 
+      此时不能设置flex元素的宽度，且无论如何收缩也不会导致flex元素中被占据空间的元素丢失，
+      即flex被自动撑开的宽度不能被收缩，如果不能继续收缩的时候元素会溢出当前flex元素，若其他的flex元素没有撑满自身，
+      则会先减去那个溢出的flex元素溢出的宽度，剩下的空间才是溢出空间，才会按照下面的公式进行计算。
+
+      设置如下属性值即可实现等分布局：
+
+                            flex-grow: 1;
+                            flex-basis: 0;
+                            flex-shrink: 1; 
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">22</div>
+      <div class="item">333</div>
+      <div class="item">4444</div>
+      <div class="item">55555</div>
+      <div class="item">66666666666</div>
+    </div>
+  </body>
+</html>

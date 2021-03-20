@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-项目-flex-grow</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      .wrap > .item:nth-child(1) {
+        flex-grow: 3;
+      }
+      /* 
+      flex-basis 指定了 flex 元素在主轴方向上的初始大小
+        默认值 ：auto  不可继承
+
+        注意：
+            在flex简写属性中 flex-basis的默认值为0
+       */
+      /*
+        flex-grow设置了一个flex项主尺寸的flex增长系数。它指定了flex容器中剩余空间的多少应该分配给项目（flex增长系数）。
+
+                主尺寸是项的宽度或高度，这取决于flex-direction值。
+
+                剩余的空间是flex容器的大小减去所有flex项的大小加起来的大小。如果所有的兄弟项目都有相同的flex-grow系数，
+                那么所有的项目将获得相同的剩余空间，否则将根据不同的flex-grow系数定义的比例进行分配。
+
+            flex-grow： 
+                    可用空间 = (容器大小 - 所有相邻项目flex-basis的总和。若没有flex-basis，则使用元素的width代替)  400-50 *6 = 100
+                    可扩展空间 = (可用空间/所有相邻项目flex-grow的总和)                                          100/8=12.5
+                    每项伸缩大小 = (伸缩基准值 + (可扩展空间 x flex-grow值))                                     50 + 12.5 *3 = 87.5      
+
+                    当设置 flex-basis:0;的时候，则计算结果如下
+
+                    可用空间：       400- 0 *6 = 400
+                    可扩展空间        400 /8 = 50
+                    每项伸缩大小      0+ 50*3 = 150      0+ 50*1 =50 
+
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

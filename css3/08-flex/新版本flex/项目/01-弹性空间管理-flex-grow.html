@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex-弹性空间管理</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+       
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+        flex-grow: 1;
+      }
+      .wrap > .item:nth-child(1){
+          flex-grow: 3;
+      }
+      /*
+        flex-grow设置了一个flex项主尺寸的flex增长系数。它指定了flex容器中剩余空间的多少应该分配给项目（flex增长系数）。
+
+                 默认值为0  不可被继承
+
+
+                 可选值：
+                      <number>  负值无效，默认为0。例如 1/2/3/4 .......
+
+            参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow
+      */
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

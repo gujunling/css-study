@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-新版本的flex新增的-项目-align-self</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid;
+        margin: 200px auto;
+        display: flex;
+      }
+      .wrap > .item {
+        width: 50px;
+        height: 50px;
+        background: #bfa;
+        text-align: center;
+        line-height: 50px;
+      }
+      .wrap > .item:nth-child(1) {
+        order: 3;
+        align-self: flex-end;
+      }
+      .wrap > .item:nth-child(2) {
+        order: 5;
+      }
+      .wrap > .item:nth-child(3) {
+        order: 2;
+      }
+      .wrap > .item:nth-child(4) {
+        order: 6;
+      }
+      .wrap > .item:nth-child(5) {
+        order: 1;
+      }
+      .wrap > .item:nth-child(6) {
+        order: 4;
+      }
+      /*
+        align-self 属性 会对齐当前 grid 或 flex 行中的flex元素，并覆盖已有的 align-items 的值。In Grid, it aligns the item inside the grid area. 
+                       在 Flexbox 中，会按照 cross axis（当前 flex 元素排列方向的垂直方向）进行排列。
+                     
+                      默认值：auto    不可继承
+                    
+                    align-self属性不适用于块类型的盒模型和表格单元。如果任何 flexbox 元素的侧轴方向 margin 值设置为 auto，则会忽略 align-self。
+
+
+        参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self
+ 
+      */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>
