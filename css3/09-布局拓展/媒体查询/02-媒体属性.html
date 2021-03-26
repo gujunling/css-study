@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-媒体查询-媒体属性</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        margin: 200px auto;
+      }
+      /* 媒体查询一般都写在样式的最下面，防止被其他样式覆盖 */
+      @media screen and (-webkit-min-device-pixel-ratio: 1) {
+        .wrap {
+          background: #bfa;
+        }
+      }
+      /* 
+      媒体属性
+        浏览器视口尺寸  width			           （可加max min前缀）
+        浏览器视口尺寸 height			         （可加max min前缀）
+        设备独立像素（pc端：分辨率； 移动端：具体看机器的参数）：device-width	       （可加max min前缀）
+        设备像素比（pc端：1；  移动端：具体看机器参数） -webkit-device-pixel-ratio   （可加max min前缀，需要加webkit前缀）
+        orientation     portrait竖屏/landscape横屏
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

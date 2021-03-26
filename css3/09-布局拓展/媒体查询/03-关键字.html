@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-媒体查询-关键字</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        margin: 200px auto;
+      }
+      /* 媒体查询一般都写在样式的最下面，防止被其他样式覆盖 */
+      @media screen and (-webkit-min-device-pixel-ratio: 1) {
+        .wrap {
+          background: #bfa;
+        }
+      }
+      /* 
+        关键字：
+           and ：代表与的意思，一般用and来连接媒体类型和媒体属性
+
+           only ： 和浏览器的兼容性有关，防止老旧的浏览器  不支持带媒体属性的查询而应用到给定的样式。
+                    在老款的浏览器下
+                      @media only    --->    因为没有only这种设备 规则被忽略
+                      @media screen --->   因为有screen这种设备而且老浏览器会忽略带媒体属性的查询
+                      
+          (,) : 代表或者的意思，对于所有的连接选项只要匹配成功一个就能应用规则
+
+          not: 代表取反的意思，
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>

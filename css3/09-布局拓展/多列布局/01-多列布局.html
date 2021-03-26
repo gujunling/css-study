@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-多列布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap{
+          width: 600px;
+          margin: 0 auto;
+          border: 1px solid;
+          /* column-width: 200px; */
+          column-count: 3;
+          column-gap: 20px;
+          column-rule: 1px solid red;
+      }
+      /* 
+      column-width:用来指定每一栏的宽度,但字与字之间有间隙，实际效果并不符合预期，所以这个一般不建议使用。
+
+      column-count:用来指定栏目的列数，即指定要分多少列。
+
+      column-gap:用来设置元素列之间的间隔 (gutter) 大小。
+
+            可选值：
+                normal
+                表示列之间的间隔宽度。在 多列布局 时默认间隔为1em，其他类型布局默认间隔为 0。
+
+                <length>
+                用<length>来定义列之间的间隔大小。而且 <length> 值必须是非负数的。
+
+                <percentage>
+                用<percentage>（百分比）来定义列之间的间隔大小。同样的，<percentage> 值也必须是非负数的。
+
+
+      column-rule属性规定了列与列之间的直线，该简写可以避免单独设置各个 column-rule-* 属性：column-rule-width，column-rule-style 和 column-rule-color。
+              初始值: column-rule-width: medium ; column-rule-style: none  ; column-rule-color: currentcolor
+
+            参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-rule
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的说法划的说法啥的说答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的说划的说法啥的说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的说划的说法啥的说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+      哈哈哈第三个发的广东省广泛的合格的规划的说法啥的划的说法啥的说说法答复士大夫撒旦士大夫<br>
+    </div>
+  </body>
+</html>

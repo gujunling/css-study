@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端小记-媒体查询-媒体类型</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        margin: 200px auto;
+      }
+      /* 媒体查询一般都写在样式的最下面，防止被其他样式覆盖 */
+      @media screen {
+        /* 媒体查询中书写规则，即选择器加声明块 */
+        .wrap {
+          background: #bfa;
+        }
+      }
+      /* 
+      媒体类型：
+        all            所有媒体
+        screen         彩色屏幕
+        print          打印预览
+       */
+    </style>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
+</html>
