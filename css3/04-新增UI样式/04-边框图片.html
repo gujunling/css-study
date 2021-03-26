@@ -22,6 +22,11 @@
         /* 
         border-image-source 定义一张图片来代替边框样式，如果为none，则仍然使用border-style定义的样式
                            默认值：none  不可被继承
+        参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-image-source
+         
+        通过border-image-source 引用边框图片后，border-image-slice属性会将图片分割为9个区域：四个角，四个边（edges）以及中心区域。四条切片线，从它们各自的侧面设置给定距离，控制区域的大小。
+        参考链接：https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-image-slice
+
          */
         border: 30px solid;
         border-image-source: url(./img/border-image.png);
